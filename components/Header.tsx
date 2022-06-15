@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import Menu from "./Menu";
 
 const Header = () => {
@@ -9,7 +11,23 @@ const Header = () => {
         px-20
       `}
     >
-      <div></div>
+      <div className="flex p-1">
+        <Link href={'/'}>
+          <div>
+            <Image 
+              src={'/img/vendor.jpg'}
+              alt={'foto de perfil do vendedor'}
+              width={'65'}
+              height={'65'}
+              style={{
+                borderRadius: '9999px',
+                borderStyle: 'solid',
+                borderColor: '#FFFFFF',
+              }}
+            />
+          </div>
+        </Link>
+      </div>
       <div>
         <Menu />
       </div>

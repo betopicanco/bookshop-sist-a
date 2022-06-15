@@ -2,7 +2,7 @@ import Header from "./Header";
 
 const Layout = (props: { children: JSX.Element }) => {
   return (
-    <div className={`bg-fuchsia-300 h-screen`}>
+    <div className={`bg-fuchsia-200 h-screen`}>
       <Header />
       
       <main className={`px-20 py-10`}>

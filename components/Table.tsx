@@ -2,14 +2,14 @@ import Th from "./Th";
 
 interface TableProps {
   thead: string[],
-  children: JSX.Element[] | JSX.Element
+  tbody: JSX.Element
 }
 
 const Table = (props: TableProps) => {
-  const { thead, children } = props;
+  const { thead, tbody } = props;
 
   return (
-    <table className={` mt-10 `}>
+    <table className={` mt-10 shadow-lg w-full `}>
       <thead>
         <tr>
           {thead.map((header, index) => {
@@ -21,9 +21,7 @@ const Table = (props: TableProps) => {
           })}
         </tr>
       </thead>
-      <tbody>
-        {children}
-      </tbody>
+      {tbody}
     </table>
   );
 }

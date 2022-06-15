@@ -1,9 +1,7 @@
-const Td = () => {
+export default function Td(props: { children: JSX.Element | string }) {
   return (
-    <td>
-
+    <td className="bg-white p-2 border border-stone-300">
+      {props.children}
     </td>
   );
 }
-
-export default Td;
