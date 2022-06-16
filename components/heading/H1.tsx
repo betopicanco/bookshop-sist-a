@@ -1,9 +1,9 @@
-const H1 = (props: { children: string }) => {
+import HeadingProps from "./interface";
+
+export default function H1(props: HeadingProps){
   return (
-    <h1 className={`text-3xl`}>
+    <h1 className={` text-3xl `}>
       {props.children}
     </h1>
   );
 }
-
-export default H1;

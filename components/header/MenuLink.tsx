@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const MenuLink = (props: {href: string, children: string}) => {
+export default function MenuLink(props: { href: string, children: string }) {
   return (
     <li className={`text-white my-6 pl-12`}>
       <Link href={props.href} passHref>
@@ -9,5 +9,3 @@ const MenuLink = (props: {href: string, children: string}) => {
     </li>
   );
 }
-
-export default MenuLink;

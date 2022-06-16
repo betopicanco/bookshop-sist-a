@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Menu from "./Menu";
 
-const Header = () => {
+export default function Header() {
   return (
     <header 
       className={`
@@ -34,5 +34,3 @@ const Header = () => {
     </header>
   );
 }
-
-export default Header;

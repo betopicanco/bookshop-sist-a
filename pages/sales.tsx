@@ -5,8 +5,12 @@ import PrimaryButton from "../components/button/PrimaryButton";
 import Table from "../components/table";
 import TBody from "../components/table/TBody";
 import Td from "../components/table/Td";
+import { NextPage } from "next";
+import { useState } from "react";
+import NewSale from "../components/sales/NewSale";
 
-const Sales = () => {
+const Sales: NextPage = () => {
+  const [ showModal, setShowModal ] = useState(false);
   const sales = [
     {name: 'Livro X', price: 100.00, vendor: 'Cléber Machado', date: '14/05/22'},
     {name: 'Livro Y', price: 75.00, vendor: 'Sérgio Luiz', date: '14/05/22'},
@@ -32,10 +36,14 @@ const Sales = () => {
             Vendas
           </H1>
 
-          <PrimaryButton>
+          <PrimaryButton handleClick={() => { setShowModal(true) }}>
             Adicionar
           </PrimaryButton>
         </div>
+
+        {showModal && (
+          <NewSale setShowModal={setShowModal}/>
+        )}
 
         <Table 
           thead={

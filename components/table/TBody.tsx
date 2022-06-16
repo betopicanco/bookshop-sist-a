@@ -17,5 +17,5 @@ export default function TBody(props: TBodyProps) {
         )
       })}
     </tbody>
-  )
+  );
 }

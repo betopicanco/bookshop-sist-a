@@ -1,6 +1,6 @@
 import Header from "./header";
 
-const Layout = (props: { children: JSX.Element }) => {
+export default function Layout(props: { children: JSX.Element }) {
   return (
     <div className={`bg-fuchsia-200 h-screen`}>
       <Header />
@@ -11,5 +11,3 @@ const Layout = (props: { children: JSX.Element }) => {
     </div>
   );
 }
-
-export default Layout;

@@ -1,16 +1,15 @@
-import IncludeForm from "../components/form/IncludeForm";
+import { NextPage } from "next";
 import H1 from "../components/heading/H1";
 import Layout from "../components/Layout";
+import Modal from "../components/modal";
 
-const Shopping = () => {
+const Shopping: NextPage = () => {
   return (
     <Layout>
       <>
         <H1>
           Compras
         </H1>
-
-        <IncludeForm />
       </>
     </Layout>
   );

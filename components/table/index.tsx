@@ -5,7 +5,7 @@ interface TableProps {
   tbody: JSX.Element
 }
 
-const Table = (props: TableProps) => {
+export default function Table(props: TableProps) {
   const { thead, tbody } = props;
 
   return (
@@ -25,5 +25,3 @@ const Table = (props: TableProps) => {
     </table>
   );
 }
-
-export default Table;

@@ -1,6 +1,6 @@
 import MenuLink from "./MenuLink";
 
-const Menu = () => {
+export default function Menu() {
   return (
     <nav>
       <ul className={`flex`}> 
@@ -23,5 +23,3 @@ const Menu = () => {
     </nav>
   );
 }
-
-export default Menu;
