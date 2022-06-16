@@ -1,10 +1,10 @@
-import H1 from "../components/H1";
+import H1 from "../components/heading/H1";
 import Trash from "../components/icons/Trash";
 import Layout from "../components/Layout"
-import PrimaryButton from "../components/PrimaryButton";
-import Table from "../components/Table";
-import TBody from "../components/TBody";
-import Td from "../components/Td";
+import PrimaryButton from "../components/button/PrimaryButton";
+import Table from "../components/table";
+import TBody from "../components/table/TBody";
+import Td from "../components/table/Td";
 
 const Sales = () => {
   const sales = [

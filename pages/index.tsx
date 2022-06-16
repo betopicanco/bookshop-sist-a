@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
-import H1 from '../components/H1'
+import H1 from '../components/heading/H1'
+import HomeSection from '../components/home'
 import Layout from '../components/Layout'
 
 const Home: NextPage = () => {
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
           Bem vinda
         </H1>
         
-        <p></p>
+        <HomeSection />
       </>
     </Layout>
   )
