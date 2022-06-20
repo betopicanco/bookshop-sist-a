@@ -44,9 +44,9 @@ const Providers: NextPage = () => {
 
         {providers && (
           <Table
-            thead={['Fornecedor', 'Endereço', 'Telefone', 'Site', 'Excluir']}
+            thead={['Fornecedor', 'Endereço', 'Telefone', 'Site']}
             tbody={
-              <TBody data={providers} actions={deleteAction}/>
+              <TBody data={providers}/>
             }
           />
         )}

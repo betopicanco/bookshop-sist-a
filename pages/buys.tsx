@@ -45,9 +45,9 @@ const Buys: NextPage = () => {
 
         {buys && (
           <Table
-          thead={['Livro', 'Preço', 'Chega em', 'Fornecedor', 'Entregue']}
+          thead={['Livro', 'Preço', 'Chega em', 'Fornecedor']}
             tbody={
-              <TBody data={buys} actions={confirm}/>
+              <TBody data={buys}/>
             }
           />
         )}
