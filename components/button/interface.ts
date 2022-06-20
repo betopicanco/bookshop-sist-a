@@ -1,4 +1,5 @@
 export default interface ButtonProps {
   children: JSX.Element | string,
-  handleClick: () => void
+  type?: 'button' | 'submit' | undefined,
+  handleClick?: () => any
 }

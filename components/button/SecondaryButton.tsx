@@ -1,11 +1,11 @@
 import ButtonProps from "./interface";
 
 export default function SecondaryButton(props: ButtonProps) {
-  const { children, handleClick } = props;
+  const { children, type } = props;
 
   return (
-    <button 
-      onClick={handleClick}
+    <button
+      type={type}
       className={` 
         px-4 py-2 rounded-md
         shadow-md

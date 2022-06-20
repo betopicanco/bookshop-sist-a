@@ -9,7 +9,7 @@ export default function Datalist(props: DatalistProps) {
 
   return (
     <div>
-      <input 
+      <input
         list={id} 
         placeholder={placeholder}
         className={`

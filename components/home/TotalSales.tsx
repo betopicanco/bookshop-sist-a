@@ -2,9 +2,13 @@ import H2 from "../heading/H2";
 import H3 from "../heading/H3";
 import RealCurrency from "../RealCurrency";
 
-export default function TotalSales() {
-  const day = 4000;
-  const month = 25000;
+interface TotalSalesProps {
+  day: number,
+  month: number
+}
+
+export default function TotalSales(props: TotalSalesProps) {
+  const { day, month } = props;
   const style = {
     valueInReal: ` 
       px-4 py-2 m-1
@@ -20,7 +24,7 @@ export default function TotalSales() {
       </H2>
 
       <div className={` pt-10 flex justify-around `}>
-        <div>
+        {/* <div>
           <H3>
             Dia
           </H3>
@@ -30,7 +34,7 @@ export default function TotalSales() {
               <RealCurrency value={day}/>
             </strong>
           </div>
-        </div>
+        </div> */}
 
         <div>
           <H3>

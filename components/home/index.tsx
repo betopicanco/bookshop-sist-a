@@ -1,13 +1,22 @@
-import Modal from "../modal";
 import LatestSales from "./LatestSales";
 import TotalSales from "./TotalSales";
 
-export default function HomeSection() {
+interface HomeSectionProps {
+  totalSales: {
+    day: number,
+    month: number
+  },
+
+}
+
+export default function HomeSection(props: HomeSectionProps) {
+  const { totalSales } = props;
+  
   return (
     <section className={` pt-10 flex justify-between `}>
-      <LatestSales />
+      {/* <LatestSales /> */}
       
-      <TotalSales />
+      <TotalSales day={totalSales.day} month={totalSales.month}/>
     </section>
   );
 }

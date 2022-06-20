@@ -3,8 +3,24 @@ import H3 from "../../heading/H3";
 import Input from "../../input";
 import Modal from "..";
 import AddModalInterface from "./interface";
+import api from "../../../services/api";
 
 export default function NewProviders(props: AddModalInterface) {
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    const data = {
+      name: event.target.name.value,
+      address: event.target.address.value,
+      contact: event.target.contact.value,
+      site: event.target.site.value,
+    }
+
+    api.post('/provider', data)
+      .then(() => props.setShowModal(false))
+      .catch(err => console.error(err))
+  }
+
   return (
     <Modal 
       setShowModal={props.setShowModal} 
@@ -13,14 +29,30 @@ export default function NewProviders(props: AddModalInterface) {
           Incluir Fornecedor
         </H3>
       }>
-      <Form>
-        <Input placeholder="Fornecedor"/>
+      <Form handleSubmit={handleSubmit}>
+        <Input
+          id="name"
+          placeholder="Fornecedor"
+          required
+        />
 
-        <Input placeholder="Endereço"/>
+        <Input 
+          id="address"
+          placeholder="Endereço"
+          required
+        />
 
-        <Input placeholder="Telefone"/>
+        <Input 
+          id="contact"
+          placeholder="Telefone"
+          required
+        />
 
-        <Input placeholder="Site"/>
+        <Input 
+          id="site"
+          placeholder="Site"
+          required
+        />
       </Form>
     </Modal>
   )

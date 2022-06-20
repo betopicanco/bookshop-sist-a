@@ -3,9 +3,24 @@ import H3 from "../../heading/H3";
 import Input from "../../input";
 import Modal from "..";
 import AddModalInterface from "./interface";
-import Datalist from "../../input/Datalist";
+import api from "../../../services/api";
 
 export default function NewBuy(props: AddModalInterface) {
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    const data = {
+      book: event.target.book.value,
+      price: event.target.price.value,
+      date: event.target.date.value,
+      provider: event.target.provider.value,
+    };
+
+    api.post('/buys', data)
+      .then(() => props.setShowModal(false))
+      .catch(err => console.error(err))
+  };
+
   return (
     <Modal 
       setShowModal={props.setShowModal} 
@@ -14,21 +29,29 @@ export default function NewBuy(props: AddModalInterface) {
           Incluir Item
         </H3>
       }>
-      <Form>
-        <Input placeholder="Nome do Livro"/>
-
-        <Input placeholder="Preço"/>
-
-        <Datalist
-          id={'corredor'}
-          placeholder="Selecionar Corredor"
-          options={['A', 'B', 'C', 'D']}
+      <Form handleSubmit={handleSubmit}>
+        <Input 
+          id="book"
+          placeholder="Nome do Livro"
+          required
         />
 
-        <Datalist
-          id={'pratileira'}
-          placeholder="Selecionar Pratileira"
-          options={['A', 'B', 'C', 'D']}
+        <Input 
+          id="price"
+          placeholder="Preço"
+          required
+        />
+
+        <Input 
+          id="date"
+          placeholder="Data"
+          required
+        />
+
+        <Input 
+          id="provider"
+          placeholder="Fornecedor"
+          required
         />
       </Form>
     </Modal>

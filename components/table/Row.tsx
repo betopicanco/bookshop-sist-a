@@ -8,8 +8,8 @@ export default function Row({obj, index} : {obj: any, index: number}) {
     (!prop.includes('id')) && (
       row.push(
         <Td key={`${index}-${prop}`}>
-          {prop === 'price' ? (
-            <RealCurrency value={obj[`${prop}`]}/>
+          {prop.includes('valor') || (prop === 'preco') ? (
+            <RealCurrency value={+obj[`${prop}`]}/>
           ) : (
             obj[`${prop}`]
           )}

@@ -2,7 +2,7 @@ import Header from "./header";
 
 export default function Layout(props: { children: JSX.Element }) {
   return (
-    <div className={`bg-fuchsia-200 h-screen`}>
+    <div className={`bg-fuchsia-200 min-h-screen`}>
       <Header />
       
       <main className={`px-20 py-10`}>

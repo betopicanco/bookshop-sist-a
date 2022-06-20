@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PrimaryButton from "../components/button/PrimaryButton";
 import H1 from "../components/heading/H1";
 import Check from "../components/icons/Check";
@@ -8,9 +8,18 @@ import NewBuy from "../components/modal/add/NewBuy";
 import Table from "../components/table";
 import TBody from "../components/table/TBody";
 import Td from "../components/table/Td";
+import api from "../services/api";
 
 const Buys: NextPage = () => {
   const [ showModal, setShowModal ] = useState(false);
+  const [ buys, setBuys ] = useState();
+
+  useEffect(() => {
+    api.get('/buys').then(res => {
+      setBuys(res.data.data)
+    });
+  }, []);
+
   const confirm = (
     <Td>
       <Check style={` h-6 w-6 stroke-green-500 `}/>
@@ -34,12 +43,14 @@ const Buys: NextPage = () => {
           <NewBuy setShowModal={setShowModal}/>
         )}
 
-        <Table
-          thead={['Livro', 'Preço', 'Fornecedor', 'Chega em', 'Entregue']}
-          tbody={
-            <TBody data={[0]} actions={confirm}/>
-          }
-        />
+        {buys && (
+          <Table
+          thead={['Livro', 'Preço', 'Chega em', 'Fornecedor', 'Entregue']}
+            tbody={
+              <TBody data={buys} actions={confirm}/>
+            }
+          />
+        )}
        </> 
     </Layout>
   );
