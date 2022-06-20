@@ -1,17 +1,19 @@
 interface InputProps {
   id: string,
   placeholder: string,
-  required?: boolean
+  required?: boolean,
+  type?: 'text' | 'date'
 }
 
 export default function Input(props: InputProps) {
   const { id, placeholder, required } = props;
+  const type  = props.type ? props.type : 'text'
   
   return (
     <input
       id={id}
       name={id}
-      type="text"
+      type={type}
       required={required}
       placeholder={placeholder} 
       className={`

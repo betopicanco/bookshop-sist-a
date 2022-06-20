@@ -46,6 +46,7 @@ export default function NewSale(props: AddModalInterface) {
 
         <Input 
           id="sellDate"
+          type="date"
           placeholder="Data"
           required
         />

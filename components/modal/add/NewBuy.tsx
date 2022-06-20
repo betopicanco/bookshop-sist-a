@@ -44,6 +44,7 @@ export default function NewBuy(props: AddModalInterface) {
 
         <Input 
           id="date"
+          type="date"
           placeholder="Data"
           required
         />

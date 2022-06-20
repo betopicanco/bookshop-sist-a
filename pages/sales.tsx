@@ -13,11 +13,6 @@ import api from '../services/api';
 const Sales: NextPage = () => {
   const [ showModal, setShowModal ] = useState(false);
   const [ sales, setSales ] = useState<any>();
-  const deleteAction = (
-    <Td>
-      <Trash style={` h-6 w-6 stroke-red-600 `}/>
-    </Td>
-  );
 
   useEffect(() => {
     api.get('/sell').then(res => {
@@ -45,10 +40,10 @@ const Sales: NextPage = () => {
         {sales && (
           <Table 
             thead={
-              ['Livro', 'Vendedor', 'Data', 'Valor', 'Nota', 'Excluir']
+              ['Livro', 'Vendedor', 'Data', 'Valor', 'Nota']
             }
             tbody={
-              <TBody data={sales} actions={deleteAction}/>
+              <TBody data={sales}/>
             }
           />
         )}
