@@ -3,9 +3,11 @@ import { useState } from "react";
 import PrimaryButton from "../components/button/PrimaryButton";
 import H1 from "../components/heading/H1";
 import Layout from "../components/Layout";
-import NewSupllier from "../components/suppliers/NewSupplier";
+import NewItem from "../components/modal/add/NewItem";
+import Table from "../components/table";
+import TBody from "../components/table/TBody";
 
-const Suppliers: NextPage = () => {
+const Inventory: NextPage = () => {
   const [ showModal, setShowModal ] = useState(false);
 
   return (
@@ -13,7 +15,7 @@ const Suppliers: NextPage = () => {
       <>
         <div className="flex justify-between">
           <H1>
-            Fornecedores
+            Estoque
           </H1>
 
           <PrimaryButton handleClick={() => { setShowModal(true) }}>
@@ -22,11 +24,18 @@ const Suppliers: NextPage = () => {
         </div>
 
         {showModal && (
-          <NewSupllier setShowModal={setShowModal}/>
+          <NewItem setShowModal={setShowModal}/>
         )}
+
+        <Table
+          thead={['Livros', 'Preço', 'Corredor', 'Prateleira']}
+          tbody={
+            <TBody data={[0]}/>
+          }
+        />
       </>
     </Layout>
   );
 }
 
-export default Suppliers;
+export default Inventory;

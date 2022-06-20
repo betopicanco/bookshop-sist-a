@@ -31,7 +31,7 @@ export default function Modal(props: ModalProps) {
           `}>
           <div className="text-right p-2">
             <PrimaryButton handleClick={() => setShowModal(false)}>
-              x
+              X
             </PrimaryButton>
           </div>
           

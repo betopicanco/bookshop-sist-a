@@ -5,14 +5,16 @@ export default function Row({obj, index} : {obj: any, index: number}) {
   const row = [];
   
   for(let prop in obj) {
-    row.push(
-      <Td key={`${index}-${prop}`}>
-        {prop === 'price' ? (
-          <RealCurrency value={obj[`${prop}`]}/>
-        ) : (
-          obj[`${prop}`]
-        )}
-      </Td>
+    (!prop.includes('id')) && (
+      row.push(
+        <Td key={`${index}-${prop}`}>
+          {prop === 'price' ? (
+            <RealCurrency value={obj[`${prop}`]}/>
+          ) : (
+            obj[`${prop}`]
+          )}
+        </Td>
+      )
     )
   }
 

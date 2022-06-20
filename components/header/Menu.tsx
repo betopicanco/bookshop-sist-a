@@ -8,15 +8,15 @@ export default function Menu() {
           Vendas
         </MenuLink>
 
-        <MenuLink href="/stock">
+        <MenuLink href="/inventory">
           Estoque
         </MenuLink>
         
-        <MenuLink href="/shopping">
+        <MenuLink href="/buys">
           Compras
         </MenuLink>
         
-        <MenuLink href="/suppliers">
+        <MenuLink href="/providers">
           Fornecedores
         </MenuLink>
       </ul>

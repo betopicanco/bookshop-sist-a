@@ -7,20 +7,27 @@ import TBody from "../components/table/TBody";
 import Td from "../components/table/Td";
 import { NextPage } from "next";
 import { useState } from "react";
-import NewSale from "../components/sales/NewSale";
+import NewSale from "../components/modal/add/NewSale";
+import SalesInterface from "../interfaces/sales";
+
+export async function getStaticProps() {
+  return {
+    props: {
+      sales: true
+    }
+  }
+}
+
+interface SalesProps {
+  sales: SalesInterface[]
+}
 
 const Sales: NextPage = () => {
   const [ showModal, setShowModal ] = useState(false);
   const sales = [
-    {name: 'Livro X', price: 100.00, vendor: 'Cléber Machado', date: '14/05/22'},
-    {name: 'Livro Y', price: 75.00, vendor: 'Sérgio Luiz', date: '14/05/22'},
-    {name: 'Livro Z', price: 50.00, vendor: 'Vinicius Junior', date: '14/05/22'},
-    {name: 'Livro X', price: 100.00, vendor: 'Cléber Machado', date: '14/05/22'},
-    {name: 'Livro Y', price: 75.00, vendor: 'Sérgio Luiz', date: '14/05/22'},
-    {name: 'Livro Z', price: 50.00, vendor: 'Vinicius Junior', date: '14/05/22'},
-    {name: 'Livro X', price: 100.00, vendor: 'Cléber Machado', date: '14/05/22'},
-    {name: 'Livro Y', price: 75.00, vendor: 'Sérgio Luiz', date: '14/05/22'},
-    {name: 'Livro Z', price: 50.00, vendor: 'Vinicius Junior', date: '14/05/22'},
+    {id: 1, nomelivro: 'Livro X', valor: 100.00, nomevendedor: 'Cléber Machado', datavenda: '14/05/22'},
+    {id: 2, nomelivro: 'Livro Y', valor: 75.00, nomevendedor: 'Sérgio Luiz', datavenda: '14/05/22'},
+    {id: 3, nomelivro: 'Livro Z', valor: 50.00, nomevendedor: 'Vinicius Junior', datavenda: '14/05/22'},
   ];
   const deleteAction = (
     <Td>

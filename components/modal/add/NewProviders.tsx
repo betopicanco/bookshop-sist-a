@@ -1,14 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
-import Form from "../form";
-import H3 from "../heading/H3";
-import Input from "../input";
-import Modal from "../modal";
+import Form from "../../form";
+import H3 from "../../heading/H3";
+import Input from "../../input";
+import Modal from "..";
+import AddModalInterface from "./interface";
 
-interface NewSupplierProps {
-  setShowModal: Dispatch<SetStateAction<boolean>>
-}
-
-export default function NewSupllier(props: NewSupplierProps) {
+export default function NewProviders(props: AddModalInterface) {
   return (
     <Modal 
       setShowModal={props.setShowModal} 
